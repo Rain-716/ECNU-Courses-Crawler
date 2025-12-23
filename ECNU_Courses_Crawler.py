@@ -85,6 +85,12 @@ def init_driver():
     """初始化 Selenium Driver"""
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
+    # 屏蔽日志输出
+    options.add_argument('--log-level=3') 
+    options.add_argument('--disable-logging')
+    options.add_argument('--disable-gpu')
+    # 忽略 Google 服务相关的错误
+    options.add_argument('--disable-software-rasterizer')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--ignore-certificate-errors') # 忽略证书错误
